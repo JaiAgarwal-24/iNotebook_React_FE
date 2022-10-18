@@ -17,11 +17,13 @@ function App() {
         <NoteState>
           <Router>
             <Navbar />
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/about" element={<About />} />
-              {/* <Route exact path = "/user" element = {<Users/>}/> */}
-            </Routes>
+            <div className="container">
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route exact path="/about" element={<About />} />
+                {/* <Route exact path = "/user" element = {<Users/>}/> */}
+              </Routes>
+            </div>
           </Router>
         </NoteState>
       </ErrorBoundary>
