@@ -9,6 +9,7 @@ import Home from './Components/Home';
 import ErrorBoundary from './Components/ErrorBoundary';
 import About from './Components/About';
 import NoteState from './Context/notes/NoteState';
+import Alert from './Components/Alert';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <NoteState>
           <Router>
             <Navbar />
+            <Alert message = "this is alert test" />
             <div className="container">
               <Routes>
                 <Route exact path="/" element={<Home />} />
