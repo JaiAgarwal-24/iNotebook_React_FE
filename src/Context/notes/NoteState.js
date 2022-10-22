@@ -4,7 +4,7 @@ import NoteContext from './noteContext';
 const NoteState = (props) => {
 
     const url = "http://localhost:5000"
-    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0ZDA0YjA2YmEzNGMzOTRjYjQxZDYzIn0sImlhdCI6MTY2NjMzNjYwNX0.Pu-VJv_ADC1TMYJfKmIAdS801Mizmk-FwBeLnOrNvaw";
+    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0ZDA0YjA2YmEzNGMzOTRjYjQxZDYzIn0sImlhdCI6MTY2NjM0MDQ3NX0.2J4V4qhI0WI2mGIU-D84WZxm5mjudXU6zpfoUNsjw7g";
 
     const notesInitial = []
 
@@ -12,7 +12,7 @@ const NoteState = (props) => {
 
     // Get all Note
     const getNotes = async () => {
-        // TODO: API call
+        // API call
 
         const response = await fetch(`${url}/notes/fetchallnotes`, {
             method: 'GET',
@@ -28,7 +28,7 @@ const NoteState = (props) => {
 
     // Add a Note
     const addNote = async (title, description, tag) => {
-        // TODO: API call
+        //  API call
 
         const response = await fetch(`${url}/notes/addnote`, {
             method: 'POST',
@@ -44,8 +44,17 @@ const NoteState = (props) => {
         setNotes(notes.concat(note))
     }
     // Delete a Note
-    const deleteNote = (id) => {
-        // TODO: API call
+    const deleteNote = async (id) => {
+        //  API call
+
+        const response = await fetch(`${url}/notes/deletenote/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': authToken
+            },
+        });
+
         console.log("Deleting the note with id " + id);
         const newNote = notes.filter((note) => { return note._id !== id });
         setNotes(newNote);
