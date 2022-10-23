@@ -10,6 +10,8 @@ import ErrorBoundary from './Components/ErrorBoundary';
 import About from './Components/About';
 import NoteState from './Context/notes/NoteState';
 import Alert from './Components/Alert';
+import Signup from './Components/Signup';
+import Login from './Components/Login';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/about" element={<About />} />
                 {/* <Route exact path = "/user" element = {<Users/>}/> */}
+                <Route exact path="/signup" element={<Signup />} />
+                <Route exact path="/login" element ={ <Login/> } />
               </Routes>
             </div>
           </Router>
