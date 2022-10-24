@@ -4,7 +4,7 @@ import NoteContext from './noteContext';
 const NoteState = (props) => {
 
     const url1 = "http://localhost:5000"
-    const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM0ZDA0YjA2YmEzNGMzOTRjYjQxZDYzIn0sImlhdCI6MTY2NjM0MDQ3NX0.2J4V4qhI0WI2mGIU-D84WZxm5mjudXU6zpfoUNsjw7g";
+    const authToken = localStorage.getItem('token');
 
     const notesInitial = []
 
