@@ -28,6 +28,7 @@ const Notes = (props) => {
     const handleClick = (e) => {
         editNote(note.id, note.etitle, note.edescription, note.etag);
         refClose.current.click();
+        props.showalert("Saved Changes Successfully", "success");
     }
 
     const onChange = (e) => {
@@ -37,7 +38,7 @@ const Notes = (props) => {
 
     return (
         <>
-            <Addnote />
+            <Addnote showalert = {props.showalert}/>
 
             <button type="button" className="btn btn-primary d-none" ref={ref} data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
@@ -81,7 +82,7 @@ const Notes = (props) => {
                 {notes.length === 0 && 'No Notes to Display'}
                 </div>
                 {notes.map((note) => {
-                    return <Noteitem key={note._id} updateNote={updateNote} note={note} />
+                    return <Noteitem key={note._id} updateNote={updateNote} note={note} showalert = {props.showalert}/>
                 })}
             </div>
         </>
